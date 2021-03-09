@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HeyWhatsUp</title>
+    <p><kbd></kbd> </p>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,900' rel='stylesheet' type='text/css'>
+    <p><kbd></kbd> </p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <p><kbd></kbd> </p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <p><kbd></kbd> </p>
+    <script>var ml = { timelines: {}};</script>
+    <p><kbd></kbd> </p>
+    <style>
+:root{
+    --okl:200px;
+    --fon:13px "Source Sans Pro", Arial, Helvetica, sans-serif;
+    --cen:center;
+}
+
+        body {
+            font: var(--fon);
+            background-color: lightpink;
+            color: lightgreen;
+            text-align: var(--cen);
+        }
+
+        .moving-letters {
+            position: var(--abs);
+            top: var(--ok);
+            right: 0;
+            left: var(--ok);
+            bottom: 0;
+            margin: auto;
+            height: var(--okl);
+        }
+    </style>
+    <p><kbd></kbd> </p>
+</head>
+<p><kbd></kbd> </p>
+<body>
+<div class="moving-letters">
+    <p><kbd></kbd> </p>
+    <h1 class="ml8">
+        <p><kbd></kbd> </p>
+  <span class="letters-container">
+    <span class="letters letters-left">Hey What's Up</span>
+      <p><kbd></kbd> </p>
+    <span class="letters bang">!</span>
+  </span>
+        <p><kbd></kbd> </p>
+        <span class="circle circle-white"></span>
+        <p><kbd></kbd> </p>
+        <span class="circle circle-dark"></span>
+        <p><kbd></kbd> </p>
+        <span class="circle circle-container"><span class="circle circle-dark-dashed"></span></span>
+        <p><kbd></kbd> </p>
+    </h1>
+    <script>
+        const sd = 1100;
+        const ed = 360;
+        const dg = [0, 3];
+        const xd = [0, 1];
+        const fg = [1, 0];
+        const dx = 1100;
+        const cv = [45, 15];
+        const hg = '-=550';
+        const hj = '-=1000';
+        const ln = "linear";
+        const hk = '-=600';
+        const targ = '.ml8 .circle-white';
+        const sct = "easeInOutExpo";
+        ml.timelines["ml8"] = anime.timeline({loop: true})
+            .add({
+                targets: targ,
+                scale: dg,
+                opacity:fg ,
+                easing: sct,
+                rotateZ: ed,
+                duration: sd
+            }).add({
+                targets: '.ml8 .circle-container',
+                scale: xd,
+                duration: sd,
+                easing: sct,
+                offset: hj
+            }).add({
+                targets: '.ml8 .circle-dark',
+                scale: xd,
+                duration: dx,
+                easing: sct,
+                offset: hk
+            }).add({
+                targets: '.ml8 .letters-left',
+                scale: xd,
+                duration: ed*4,
+                offset: hg
+            }).add({
+                targets: '.ml8 .bang',
+                scale: xd,
+                rotateZ: cv,
+                duration: ed*4,
+                offset: hj
+            }).add({
+                targets: '.ml8',
+                opacity: 0,
+                duration: sd,
+                easing: sct,
+                delay: ed*4            });
+
+        anime({
+            targets: '.ml8 .circle-dark-dashed',
+            rotateZ: ed,
+            duration: sd*8,
+            easing: ln,
+            loop: true
+        });
+    </script>
+
+    <style>
+:root{
+    --hj:900;
+    --po:4.5em;
+    --kl:3em;
+    --ok:0;
+    --un:2.2em;
+    --tr:2px dashed #4f7b86;
+    --rf:1em;
+    --abs:absolute;
+    --w:white;
+    --zd:-0.06em;
+    --au:auto;
+    --fv:-0.12em;
+    --rev:relative;
+    --er:2;
+    --lok:1;
+    --em:2em;
+}
+        h1.ml8 {
+            font-weight: var(--hj);
+            font-size:var(--po) ;
+            color: var(--w);
+            width: var(--kl);
+            height: var(--kl);
+        }
+
+        .ml8 .letters-container {
+            position: var(--abs);
+            left:var(--ok);
+            right: var(--ok);
+            margin: var(--au);
+            top: var(--ok);
+            bottom: var(--ok);
+            height: var(--rf);
+        }
+
+        .ml8 .letters {
+            position: var(--rev);
+            z-index: var(--er);
+            display: inline-block;
+            line-height: 0.7em;
+            right: var(--fv);
+            top: -0.2em;
+        }
+
+        .ml8 .bang {
+            font-size: 1.4em;
+            top: auto;
+            left: var(--zd);
+        }
+
+        .ml8 .circle {
+            position: var(--abs);
+            left: var(--ok);
+            right: var(--ok);
+            margin: auto;
+            top: var(--ok);
+            bottom: var(--ok);
+        }
+
+        .ml8 .circle-white {
+            width: var(--kl);
+            height: var(--kl);
+            border: 2px dashed white;
+            border-radius:var(--em) ;
+        }
+
+        .ml8 .circle-dark {
+            width: var(--un);
+            height: var(--un);
+            background-color: lightcoral;
+            border-radius: var(--kl);
+            z-index: var(--lok);
+        }
+
+        .ml8 .circle-dark-dashed {
+            border-radius: var(--un);
+            background-color: transparent;
+            border: var(--tr);
+            width: var(--un);
+            height: var(--un);
+        }
+    </style>
+
+
+</div>
+</body>
+</html>
